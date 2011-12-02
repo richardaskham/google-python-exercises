@@ -39,6 +39,40 @@ print_words() and print_top().
 
 import sys
 
+def print_words(filename):
+	dict = {}
+	f = open(filename, 'rU')
+	for line in f:
+		line = line.strip()
+		line = line.lower()
+		line = line.split(' ')
+		for i in range(len(line)):
+			word = line[i]
+			if word in dict:
+				dict[word] += 1
+			else:
+				dict[word] = 1
+	for key in sorted(dict.keys()): print key, dict[key]
+	return
+	
+
+def print_top(filename):
+	dict = {}
+	f = open(filename, 'rU')
+	for line in f:
+		line = line.strip()
+		line = line.lower()
+		line = line.split(' ')
+		for i in range(len(line)):
+			word = line[i]
+			if word in dict:
+				dict[word] += 1
+			else:
+				dict[word] = 1
+	i = 0
+	for key in sorted(dict.keys()): 
+		print key, dict[key]
+	return
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
 # You could write a helper utility function that reads a file

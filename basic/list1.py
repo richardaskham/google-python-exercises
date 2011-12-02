@@ -46,16 +46,15 @@ def front_x(words):
       x_words.append(this_word)
     else:
       non_x_words.append(this_word)
-    
   x_words.sort()
   non_x_words.sort()
-
   result = []
   result.extend(x_words)
   result.extend(non_x_words)
   return result
 
-
+def last_element(tuple):
+  return tuple[-1]
 
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in increasing
@@ -64,8 +63,7 @@ def front_x(words):
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 def sort_last(tuples):
-  # +++your code here+++
-  return
+  return sorted (tuples, key = last_element)
 
 
 # Simple provided test() function used in main() to print
