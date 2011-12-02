@@ -27,7 +27,6 @@ def match_ends(words):
     if (len(this_word) >= 2):
       if (this_word[0] == this_word[-1]):
         count += 1
-  # +++your code here+++
   return count
 
 
@@ -39,8 +38,22 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-  # +++your code here+++
-  return
+  x_words = []
+  non_x_words = []
+  for i in range(len(words)):
+    this_word = words[i]
+    if (this_word[0] =='x'):
+      x_words.append(this_word)
+    else:
+      non_x_words.append(this_word)
+    
+  x_words.sort()
+  non_x_words.sort()
+
+  result = []
+  result.extend(x_words)
+  result.extend(non_x_words)
+  return result
 
 
 
