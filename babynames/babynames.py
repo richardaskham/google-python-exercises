@@ -41,7 +41,15 @@ def extract_names(filename):
   ['2006', 'Aaliyah 91', Aaron 57', 'Abagail 895', ' ...]
   """
   # +++your code here+++
-  return
+  print 'opening file' + filename
+  dict = {}
+  f = open(filename,'rU')
+  year_match_list = re.findall(r'Popularity in \d\d\d\d', f.read())
+  if year_match_list:
+	year_match=re.search(r'\d\d\d\d',year_match_list[0])
+  print year_match_list
+  print year_match.group()
+  return dict
 
 
 def main():
@@ -63,6 +71,7 @@ def main():
   # +++your code here+++
   # For each filename, get the names, then either print the text output
   # or write it to a summary file
-  
+  extract_names(args[0])
+
 if __name__ == '__main__':
   main()
